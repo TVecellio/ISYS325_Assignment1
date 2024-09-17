@@ -32,11 +32,11 @@
             lnameLabel = new Label();
             workLabel = new Label();
             fnameTextBox = new TextBox();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            lnameTextBox = new TextBox();
+            workTextBox = new TextBox();
             sumBtn = new Button();
             clearBtn = new Button();
-            label1 = new Label();
+            summaryLabel = new Label();
             SuspendLayout();
             // 
             // fnameLabel
@@ -47,7 +47,6 @@
             fnameLabel.Size = new Size(80, 20);
             fnameLabel.TabIndex = 0;
             fnameLabel.Text = "&First Name";
-            fnameLabel.Click += label1_Click;
             // 
             // lnameLabel
             // 
@@ -56,7 +55,7 @@
             lnameLabel.Name = "lnameLabel";
             lnameLabel.Size = new Size(79, 20);
             lnameLabel.TabIndex = 0;
-            lnameLabel.Text = "Last Name";
+            lnameLabel.Text = "&Last Name";
             // 
             // workLabel
             // 
@@ -65,7 +64,7 @@
             workLabel.Name = "workLabel";
             workLabel.Size = new Size(103, 20);
             workLabel.TabIndex = 0;
-            workLabel.Text = "Hours Worked";
+            workLabel.Text = "&Hours Worked";
             // 
             // fnameTextBox
             // 
@@ -73,20 +72,22 @@
             fnameTextBox.Name = "fnameTextBox";
             fnameTextBox.Size = new Size(193, 27);
             fnameTextBox.TabIndex = 1;
+            fnameTextBox.TextChanged += fnameTextBox_TextChanged;
             // 
-            // textBox1
+            // lnameTextBox
             // 
-            textBox1.Location = new Point(385, 140);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(193, 27);
-            textBox1.TabIndex = 2;
+            lnameTextBox.Location = new Point(385, 140);
+            lnameTextBox.Name = "lnameTextBox";
+            lnameTextBox.Size = new Size(193, 27);
+            lnameTextBox.TabIndex = 2;
             // 
-            // textBox2
+            // workTextBox
             // 
-            textBox2.Location = new Point(584, 140);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(193, 27);
-            textBox2.TabIndex = 3;
+            workTextBox.ImeMode = ImeMode.NoControl;
+            workTextBox.Location = new Point(584, 140);
+            workTextBox.Name = "workTextBox";
+            workTextBox.Size = new Size(193, 27);
+            workTextBox.TabIndex = 3;
             // 
             // sumBtn
             // 
@@ -94,9 +95,9 @@
             sumBtn.Name = "sumBtn";
             sumBtn.Size = new Size(94, 29);
             sumBtn.TabIndex = 4;
-            sumBtn.Text = "Summarize";
+            sumBtn.Text = "&Summarize";
             sumBtn.UseVisualStyleBackColor = true;
-            sumBtn.Click += button1_Click;
+            sumBtn.Click += submit_Click;
             // 
             // clearBtn
             // 
@@ -104,30 +105,30 @@
             clearBtn.Name = "clearBtn";
             clearBtn.Size = new Size(94, 29);
             clearBtn.TabIndex = 6;
-            clearBtn.Text = "Clear";
+            clearBtn.Text = "&Clear";
             clearBtn.UseVisualStyleBackColor = true;
+            clearBtn.Click += clear_Click;
             // 
-            // label1
+            // summaryLabel
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.BorderStyle = BorderStyle.FixedSingle;
-            label1.Location = new Point(186, 268);
-            label1.Name = "label1";
-            label1.Size = new Size(591, 98);
-            label1.TabIndex = 0;
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click_1;
+            summaryLabel.Anchor = AnchorStyles.None;
+            summaryLabel.BorderStyle = BorderStyle.FixedSingle;
+            summaryLabel.Location = new Point(186, 268);
+            summaryLabel.Name = "summaryLabel";
+            summaryLabel.Size = new Size(591, 98);
+            summaryLabel.TabIndex = 0;
+            summaryLabel.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // frnMain
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1003, 591);
-            Controls.Add(label1);
+            Controls.Add(summaryLabel);
             Controls.Add(clearBtn);
             Controls.Add(sumBtn);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(workTextBox);
+            Controls.Add(lnameTextBox);
             Controls.Add(fnameTextBox);
             Controls.Add(workLabel);
             Controls.Add(lnameLabel);
@@ -144,10 +145,10 @@
         private Label lnameLabel;
         private Label workLabel;
         private TextBox fnameTextBox;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox lnameTextBox;
+        private TextBox workTextBox;
         private Button sumBtn;
         private Button clearBtn;
-        private Label label1;
+        private Label summaryLabel;
     }
 }
